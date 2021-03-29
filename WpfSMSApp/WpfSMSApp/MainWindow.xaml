@@ -8,7 +8,13 @@
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:local="clr-namespace:WpfSMSApp"
         mc:Ignorable="d"
-        Title="Stock Management System" Height="700" Width="1200" Icon="stock.png" ContentRendered="MetroWindow_ContentRendered">
+        Title="Stock Management System" Height="700" Width="1200" Icon="stock.png"
+    ContentRendered="MetroWindow_ContentRendered" Activated="MetroWindow_Activated" WindowStartupLocation="CenterScreen">
+    <mah:MetroWindow.RightWindowCommands>
+        <mah:WindowCommands>
+            <Button x:Name="BtnLoginedID"/>
+        </mah:WindowCommands>
+    </mah:MetroWindow.RightWindowCommands>
     <DockPanel>
         <Grid DockPanel.Dock="Top" Height="70">
             <Grid.ColumnDefinitions>
@@ -95,7 +101,7 @@
             </Button>
             
             <Button x:Name="BtnAccount" Grid.Column="6" Content="계정" IsDefault="True" Margin="5,10"
-                    FontSize="16" Foreground="White" Background="CornflowerBlue">
+                    FontSize="16" Foreground="White" Background="CornflowerBlue" Click="BtnAccount_Click">
                 <Button.ContentTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -107,7 +113,7 @@
             </Button>
 
             <Button x:Name="BtnLogOut" Grid.Column="7" Content="로그아웃" IsDefault="True" Margin="5,10"
-                    FontSize="16" Foreground="White" Background="Black">
+                    FontSize="16" Foreground="White" Background="Black" Click="BtnLogOut_Click">
                 <Button.ContentTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -119,7 +125,7 @@
             </Button>
         </Grid>
         <Grid Background="WhiteSmoke">
-            <ContentControl x:Name="ActiveControl"/> <!--<화면전환>-->
+            <Frame x:Name="ActiveControl"/> <!--<화면전환>-->
         </Grid>
     </DockPanel>
 </mah:MetroWindow>
