@@ -89,7 +89,7 @@
             </Button>
 
             <Button x:Name="BtnUser" Grid.Column="5" Content="사용자" IsDefault="True" Margin="5,10"
-                    FontSize="16" Foreground="White" Background="LightSteelBlue">
+                    FontSize="16" Foreground="White" Background="LightSteelBlue" Click="BtnUser_Click">
                 <Button.ContentTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -124,7 +124,7 @@
                 </Button.ContentTemplate>
             </Button>
         </Grid>
-        <Grid Background="WhiteSmoke">
+        <Grid>
             <Frame x:Name="ActiveControl"/> <!--<화면전환>-->
         </Grid>
     </DockPanel>
