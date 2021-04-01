@@ -22,12 +22,41 @@ namespace WpfSMSApp.Logic
             return users;
         }
 
+        public static List<Store> GetStores()
+        {
+            List<Store> stores;
+            using (var ctx = new SMSEntities())
+            {
+                stores = ctx.Store.ToList();
+            }
+            return stores;
+        }
+
+        public static int SetStore(Store store)
+        {
+            using (var ctx = new SMSEntities())
+            {
+                ctx.Store.AddOrUpdate(store);
+                return ctx.SaveChanges();
+            }
+        }
+
+        internal static List<Stock> GetStocks()
+        {
+            List<Stock> stocks;
+            using (var ctx = new SMSEntities())
+            {
+                stocks = ctx.Stock.ToList();
+            }
+            return stocks;
+        }
+
         /// <summary>
         /// 입력, 수정 도잇에
         /// </summary>
         /// <param name="user"></param>
         /// <returns>0또는 1이상</returns>
-        internal static int SetUser(User user)
+        public static int SetUser(User user)
         {
             using (var ctx = new SMSEntities())
             {
