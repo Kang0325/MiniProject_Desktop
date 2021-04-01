@@ -31,11 +31,13 @@
 
         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
             <TextBox x:Name="TxtMovieName" Width="515" Margin="10" FontSize="14"
+                     InputMethod.PreferredImeState="On"
+                     InputMethod.PreferredImeConversionMode="Native"
                      mah:TextBoxHelper.Watermark="검색할 영화명을 입력하세요"
                      mah:TextBoxHelper.UseFloatingWatermark="True"
-                     mah:TextBoxHelper.ClearTextButton="True"/>
+                     mah:TextBoxHelper.ClearTextButton="True" KeyDown="TxtMovieName_KeyDown"/>
             <Button x:Name="BtnSearch" Width="100" Margin="5,10" Content="검색" FontSize="14"
-                    Background="ForestGreen" Foreground="White">
+                    Background="ForestGreen" Foreground="White" Click="BtnSearch_Click">
                 <Button.ContentTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -52,7 +54,7 @@
             
         </DataGrid>
 
-        <Image x:Name="ImgPoster" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Margin="10"></Image>
+        <Image x:Name="ImgPoster" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Margin="10" Source="No_Picture.jpg"></Image>
 
         <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Stretch">
             <Button x:Name="BtnAddWatchList"

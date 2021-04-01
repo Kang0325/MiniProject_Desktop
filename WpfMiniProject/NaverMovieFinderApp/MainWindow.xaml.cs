@@ -1,4 +1,5 @@
 ﻿using MahApps.Metro.Controls;
+using NaverMovieFinderApp.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,24 @@ namespace NaverMovieFinderApp
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void BtnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            StsResult.Content = "";
+
+            if (string.IsNullOrEmpty(TxtMovieName.Text))
+            {
+                StsResult.Content = "검색할 영화명을 입력 후, 검색 버튼을 눌러주세요";
+                return;
+            }
+
+            Commons.ShowMessageAsync("결과", $"{TxtMovieName.Text}");
+        }
+
+        private void TxtMovieName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter) BtnSearch_Click(sender, e);
         }
     }
 }
