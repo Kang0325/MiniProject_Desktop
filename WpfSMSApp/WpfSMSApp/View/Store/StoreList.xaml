@@ -87,7 +87,7 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"/>
 
             <DataGrid x:Name="GrdData"
-                      AutoGenerateColumns="False" SelectionUnit="FullRow" ItemsSource="{Binding}"
+                      AutoGenerateColumns="False" SelectionUnit="FullRow" ItemsSource="{Binding}" IsReadOnly="True"
                       Style="{StaticResource MahApps.Styles.DataGrid.Azure}" GridLinesVisibility="Vertical">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding StoreID}" Header="순번" Width="60" IsReadOnly="True"/>
