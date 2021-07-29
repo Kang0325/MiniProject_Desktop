@@ -68,8 +68,8 @@ namespace WpfSMSApp.View
                 var email = TxtUserEmail.Text;
                 var password = TxtPassword.Password;
 
-                var mdHash = MD5.Create();
-                password = Commons.GetMd5Hash(mdHash, password);
+                //var mdHash = MD5.Create();
+                //password = Commons.GetMd5Hash(mdHash, password);
 
                 var isOurUser = Logic.DataAccess.GetUsers()
                     .Where(u => u.UserEmail.Equals(email) && u.UserPassword.Equals(password)
